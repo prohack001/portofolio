@@ -1,0 +1,27 @@
+---
+import ProjectCard from './ProjectCard.astro';
+import { getCollection } from 'astro:content';
+
+const projects = await getCollection('projects');
+---
+
+<section id="projects" class="section bg-[#0A0F1C] text-white">
+  <div class="container">
+    <h2 class="section-title text-center mb-12">Featured Projects</h2>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {projects.map((project, index) => (
+        <div class={`fade-in stagger-${index % 3 + 1}`}>
+          <ProjectCard
+            title={project.data.title}
+            description={project.data.description}
+            image={project.data.image}
+            technologies={project.data.technologies}
+            status={project.data.status}
+            url={project.data.url}
+          />
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

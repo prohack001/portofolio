@@ -1,0 +1,105 @@
+---
+import SocialLinks from './SocialLinks.astro';
+---
+
+<section id="hero" class="relative min-h-screen bg-gradient-to-b from-[#0A0F1C] to-[#141c30] text-white flex items-center">
+  <!-- Background Particles/Decoration -->
+  <div class="absolute inset-0 overflow-hidden">
+    <div class="absolute top-20 left-10 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-20 right-10 w-80 h-80 bg-violet-500/10 rounded-full blur-3xl"></div>
+  </div>
+
+  <div class="container mx-auto px-4 py-16 md:py-24 relative z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <!-- Text Content -->
+      <div class="space-y-8" data-aos="fade-right" data-aos-duration="1000">
+        <div class="space-y-6">
+          <div class="flex items-center">
+            <div class="h-1 w-10 bg-orange-500 mr-4"></div>
+            <p class="text-orange-500 text-xl font-medium tracking-wide">Hello, I'm</p>
+          </div>
+          
+          <h1 class="text-5xl md:text-7xl font-bold tracking-tight text-white space-y-3">
+            <span class="block">ILBOUDO</span>
+            <span class="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-violet-400">
+              Wendpingre-Nôoma Kieffer
+            </span>
+          </h1>
+          
+          <h2 class="text-2xl md:text-3xl text-gray-300 font-light">
+            AI Student & Technology Innovator
+          </h2>
+        </div>
+
+        <p class="text-gray-400 text-lg max-w-2xl leading-relaxed">
+          Studying artificial intelligence at École Polytechnique de Ouagadougou, passionate about 
+          innovation, sustainable technology, and precision beekeeping. Creating AI-powered solutions 
+          to address real-world challenges.
+        </p>
+        
+        <div class="flex flex-wrap gap-4 pt-6">
+          <a href="#projects" class="px-8 py-3 bg-gradient-to-r from-blue-500 to-violet-500 rounded-full text-white font-medium hover:opacity-90 transition-all duration-300 transform hover:-translate-y-1 flex items-center gap-2 shadow-lg shadow-blue-500/20">
+            View My Projects
+            <span class="text-xl transition-transform duration-300 group-hover:translate-x-1">→</span>
+          </a>
+          <a href="#contact" class="px-8 py-3 border border-gray-700 rounded-full text-gray-300 font-medium hover:bg-gray-800/50 hover:border-gray-500 transition-all duration-300 transform hover:-translate-y-1">
+            Get In Touch
+          </a>
+        </div>
+        
+        <div class="pt-8">
+          <p class="text-gray-500 mb-3">Connect with me</p>
+          <SocialLinks />
+        </div>
+      </div>
+
+      <!-- Profile Image -->
+      <div class="relative hidden lg:block" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="300">
+        <div class="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-violet-500/20 rounded-full blur-3xl"></div>
+        <div class="relative w-full max-w-md mx-auto">
+          <!-- Main Image Container -->
+          <div class="aspect-square rounded-full overflow-hidden border-4 border-gray-800 shadow-2xl shadow-violet-500/20 p-1">
+            <div class="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-violet-500/20 rounded-full"></div>
+            <img
+              src="https://images.pexels.com/photos/7988079/pexels-photo-7988079.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+              alt="Wendpingre-Nôoma Kieffer ILBOUDO - AI Student & Technology Innovator"
+              class="w-full h-full object-cover rounded-full"
+              loading="eager"
+            />
+          </div>
+          
+          <!-- Badge -->
+          <div class="absolute bottom-4 right-4 bg-gray-900/80 backdrop-blur-sm px-4 py-2 rounded-full flex items-center gap-2 shadow-lg border border-gray-800">
+            <span class="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></span>
+            <span class="text-blue-400 font-medium">AI Enthusiast</span>
+          </div>
+          
+          <!-- Experience Badge -->
+          <div class="absolute top-4 left-0 bg-gray-900/80 backdrop-blur-sm px-4 py-2 rounded-full flex items-center gap-2 shadow-lg border border-gray-800">
+            <span class="text-orange-400 font-medium">École Polytechnique</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 hidden md:flex flex-col items-center animate-bounce">
+      <span class="text-gray-400 text-sm mb-2">Scroll Down</span>
+      <span class="w-1 h-8 bg-gradient-to-b from-blue-500 to-violet-500 rounded-full"></span>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Optional: Add animation library like AOS (Animate on Scroll)
+  // This requires adding the AOS library to your project
+  // You can add this in your main layout or through a package manager
+  document.addEventListener('DOMContentLoaded', () => {
+    if (typeof AOS !== 'undefined') {
+      AOS.init({
+        duration: 1000,
+        once: true,
+      });
+    }
+  });
+</script>

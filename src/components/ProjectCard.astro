@@ -1,0 +1,54 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  image: string;
+  technologies: string[];
+  status: string;
+  url?: string;
+}
+
+const { title, description, image, technologies, status, url } = Astro.props;
+---
+
+<article class="bg-gray-800/50 backdrop-blur-sm rounded-lg overflow-hidden border border-gray-700/50 h-full flex flex-col transition-transform hover:scale-[1.02] duration-300">
+  <div class="relative aspect-[16/9] overflow-hidden">
+    <img 
+      src={image} 
+      alt={title} 
+      class="w-full h-full object-cover"
+      loading="lazy"
+    />
+    <div class="absolute bottom-2 right-2 bg-blue-500/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-medium">
+      {status}
+    </div>
+  </div>
+  
+  <div class="flex-1 p-6 flex flex-col">
+    <h3 class="text-xl font-bold text-white mb-2">
+      {title}
+    </h3>
+    
+    <p class="text-gray-300 text-sm flex-grow mb-4">
+      {description}
+    </p>
+    
+    <div class="flex flex-wrap gap-2 mb-4">
+      {technologies.map(tech => (
+        <span class="px-2 py-1 rounded-full text-xs font-medium bg-gray-700/50 text-blue-300 border border-blue-500/20">
+          {tech}
+        </span>
+      ))}
+    </div>
+    
+    {url && (
+      <a 
+        href={url} 
+        class="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors text-sm font-medium group"
+      >
+        View Project
+        <span class="ml-1 group-hover:translate-x-1 transition-transform">→</span>
+      </a>
+    )}
+  </div>
+</article>
